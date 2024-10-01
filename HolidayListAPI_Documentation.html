@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Developer Documentation</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #9cbadac1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #0f50d2;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section, .right-section {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .right-section {
+            border-left: 2px solid #ddd;
+        }
+
+        .dropdown-container {
+            margin-bottom: 20px;
+        }
+
+        label, select {
+            font-size: 1.1rem;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .required, .optional {
+            background-color: #e9f5fc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .response-section {
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .collapsible {
+            background-color: #e9f5fc;
+            cursor: pointer;
+            padding: 8px;
+            width: 70%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #ccc;
+        }
+
+        .collapsible::after {
+            content: '+';
+            float: right;
+            color: #0f50d2;
+            font-weight: bold;
+        }
+
+        .active::after {
+            content: '-';
+            color: #0f50d2;
+            font-weight: bold;
+        }
+
+        .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: white;
+        }
+        .copy-btn {
+            position: relative;        
+            background-color: #e2e5ec;
+            color: rgb(11, 9, 9);
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-radius: 5px;
+        }
+
+        .copy-btn:hover {
+                background-color: #c0cee7;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>API Developer Documentation</h1>
+    <p>Find the perfect holiday data with our easy-to-use API</p>
+</header>
+
+<div class="container">
+    <!-- Left Section: Code Example and Parameters -->
+    <div class="left-section">
+        <h2>Holidays</h2>
+        <div style="font-family: 'Helvetica Neue', Arial, sans-serif; padding: 20px; background-color: #f9f9f9; border-radius: 5px; line-height: 1.6; color: #333;">
+            Gathers information about holidays for a specific country, province, and year. It’s perfect if you want to show holiday dates in your app, website, or service—whether for planning vacations, setting reminders, or managing events.
+        </div>
+        <hr style="border: 1px solid #ddd; margin: 20px 0;">
+        
+        <div class="dropdown-container">
+            <label for="language">Choose a Language:</label>
+            <select id="language">
+                <option value="curl">cURL</option>
+                <option value="go">Go</option>
+                <!-- <option value="nodejs">Node.js</option> -->
+                <!-- <option value="php">PHP</option> -->
+                <!-- <option value="powershell">PowerShell</option> -->
+                <option value="python">Python</option>
+                <!-- <option value="ruby">Ruby</option> -->
+            </select>
+        
+        </div>
+
+        <pre id="codeBlock">Sample code will appear here...</pre>
+        <button class="copy-btn">Copy</button>
+        
+
+
+        <h2>Parameters</h2>
+        <div class="required">
+            Required:
+            <ul style="list-style-type: none">
+                <li style="margin-bottom: 10px;"><strong>country</strong> (string): The ISO 3166-1 alpha-2 country code (e.g., "US") <br>
+                    <a href="https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes" target="_blank">list of country codes</a>
+                </li style="margin-bottom: 10px;">
+                <li style="margin-bottom: 10px;"><strong>year</strong> (string): The year for which the holidays are requested (e.g., "2023")</li>
+                <li style="margin-bottom: 10px;"><strong>key</strong> (string): Your API key</li>
+            </ul>
+        </div>
+        <div class="optional">
+            Optional:
+            <ul style="list-style-type: none;">
+                <li style="margin-bottom: 10px;"><strong>month</strong> (string): Specify the month (1-12)</li>
+                <li style="margin-bottom: 10px;"><strong>day</strong> (string): Specify the day (1-31)</li>
+                <li style="margin-bottom: 10px;"><strong>isPublic</strong> (boolean): Filter public holidays only (true or false)</li>
+                <li style="margin-bottom: 10px;"><strong>subdivisions</strong> (boolean): Show holidays for subdivisions (true or false)</li>
+                <li style="margin-bottom: 10px;"><strong>language</strong> (string): Language code (e.g., "en", "fr") <br>
+                    <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">list of language codes</a>
+                </li>
+                <li style="margin-bottom: 10px;"><strong>search</strong> (string): Holiday name</li>
+                <li><strong>format</strong> (string): Format (e.g., "json", "csv")</li>
+            </ul>
+            
+        </div>
+    </div>
+
+    <!-- Right Section: Return Properties and Response -->
+    <div class="right-section">
+        <h2>Return Properties</h2>
+<ul style="list-style-type: none;">
+    <li style="margin-bottom: 10px;"><strong>status</strong>: Status code of the API request (e.g., 200 for success).</li>
+    <li style="margin-bottom: 10px;"><strong>totalCount</strong>: The total number of holidays returned by the API. This reflects how many records are present in the <code>data</code> array.</li>
+    <li style="margin-bottom: 10px;"><strong>country</strong>: The ISO 3166-1 alpha-2 code. Example: "US"</li>
+    <li style="margin-bottom: 10px;"><strong>year</strong>: The year for which the holidays are being returned.</li>
+    <!-- <li><strong>data</strong>: An array containing individual holiday objects, each representing a specific holiday.</li> -->
+    
+    <!-- Collapsible for HolidayDto -->
+    <li style="margin-bottom: 10px;"><button class="collapsible"><strong>data</strong>: An array with holiday information.</button>
+        <div class="collapsible-content">
+            <ul style="list-style-type: none;">
+                <li style="margin-bottom: 10px;"><strong>name</strong>: The name of the holiday (e.g., "New Year").</li>
+                <li style="margin-bottom: 10px;"><strong>description</strong>: A description of the holiday.</li>
+                <li style="margin-bottom: 10px;"><strong>date</strong>: The official date of the holiday.</li>
+                <li style="margin-bottom: 10px;"><strong>observed</strong>: The date when the holiday is observed (e.g., if the holiday falls on a weekend, it may be observed on a different date).</li>
+                <li style="margin-bottom: 10px;"><strong>isPublic</strong>: A value of True means it is a public holiday.</li>
+
+                <!-- Collapsible for CountryDto -->
+                <li style="margin-bottom: 10px;"><button class="collapsible"><strong>country</strong></button>
+                    <div class="collapsible-content">
+                        <ul style="list-style-type: none;">
+                            <li style="margin-bottom: 10px;"><strong>code</strong>: The ISO code. Example: "US"</li>
+                            <li style="margin-bottom: 10px;"><strong>name</strong>: The full name of the country.</li>
+                            <li style="margin-bottom: 10px;"><strong>flag</strong>: A URL link to the country's flag.</li>
+                        </ul>
+                    </div>
+                </li style="margin-bottom: 10px;">
+
+                <!-- Collapsible for HolidayWeekdayDto -->
+                <li style="margin-bottom: 10px;"><button class="collapsible"><strong>weekday</strong></button>
+                    <div>
+                        <ul style="list-style-type: none;">
+                            <li style="margin-bottom: 10px;"><strong>date</strong> (Holiday Date)
+                                <div>
+                                    <ul style="list-style-type: none;">
+                                        <li style="margin-bottom: 10px; margin-top: 10px; margin-top: 10px;"><strong>name</strong>: Example: Monday</li>
+                                        <li style="margin-bottom: 10px;"><strong>numeric</strong>: Example: 1 for Monday. </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li style="margin-bottom: 10px;"><strong>observed</strong> (Observed Date)
+                                <div>
+                                    <ul style="list-style-type: none; style=margin-bottom: 10px;">
+                                        <li style="margin-bottom: 10px;"><strong>name</strong>: The name of the weekday on which the holiday is observed. Example: Monday</li>
+                                        <li style="margin-bottom: 10px;"><strong>numeric</strong>: Example: 1 for Monday.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul style="list-style-type: none;">
+
+
+        <h2>Sample Response</h2>
+        <button class="collapsible">Show/Hide Response</button>
+        <div class="collapsible-content">
+            <pre>{
+"status": 200,
+"totalCount": 1,
+"country": "US",
+"year": 2024,
+"data": [
+    {
+    "name": "Holiday",
+    "description": "Holiday description",
+    "date": "28",
+    "observed": "28",
+    "isPublic": true,
+    "country": {
+        "code": "US",
+        "name": "United States",
+        "flag": "https://flagsapi.com/US/flat/64.png"
+    },
+    "weekday": {
+        "date": {
+        "name": "Monday",
+        "numeric": 1
+        },
+        "observed": {
+        "name": "Monday",
+        "numeric": 1
+        }
+      }
+    }
+  ]
+}
+              </pre>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const codeExamples = {
+        "curl": `curl -G -d country="US" -d year="2024" -d key="YOUR_API_KEY" https://back.holidaylist.io/api/v1/holidays
+`,
+        "go": `package main
+
+import ("github.com/feelgd777/holidaylist-go")
+
+func main() {
+    api := holidaylist.NewAPI("YOUR_API_KEY")
+    holidays, _ := api.GetHolidays(map[string]interface{}{
+        "country": "US",
+        "year":    2023,
+    })`,
+        "nodejs": `
+const axios = require('axios');
+
+axios.get('https://holidayapi.com/v1/holidays', {
+    params: {
+        country: 'US',
+        year: 2023,
+        pretty: true,
+        key: 'YOUR_API_KEY'
+    }
+}).then(response => {
+    console.log(response.data);
+}).catch(error => {
+    console.error(error);
+});
+        `,
+        "php": `
+<?php
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL, "https://holidayapi.com/v1/holidays?country=US&year=2023&pretty=true&key=YOUR_API_KEY");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+$response = curl_exec($ch);
+curl_close($ch);
+
+echo $response;
+?>
+        `,
+        "powershell": `
+$uri = 'https://holidayapi.com/v1/holidays?country=US&year=2023&key=YOUR_API_KEY'
+$response = Invoke-RestMethod -Uri $uri -Method GET
+$response | ConvertTo-Json
+        `,
+        "python": `import requests
+
+url = "https://holidayapi.com/v1/holidays"
+params = {
+    "country": "US",
+    "year": "2023",
+    "key": "YOUR_API_KEY"
+}
+
+response = requests.get(url, params=params)
+print(response.json())`,
+        "ruby": `
+require 'net/http'
+require 'uri'
+require 'json'
+
+uri = URI.parse("https://holidayapi.com/v1/holidays?country=US&year=2023&pretty=true&key=YOUR_API_KEY")
+response = Net::HTTP.get_response(uri)
+
+puts JSON.parse(response.body)
+
+        `
+    };
+
+    document.getElementById('language').addEventListener('change', function() {
+        const selectedLanguage = this.value;
+        document.getElementById('codeBlock').textContent = codeExamples[selectedLanguage];
+    });
+
+    // Set default code to cURL
+    document.getElementById('codeBlock').textContent = codeExamples["curl"];
+
+    // Collapsible sections functionality
+    var coll = document.getElementsByClassName("collapsible");
+    for (var i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+    document.querySelector('.copy-btn').addEventListener('click', function() {
+        const codeBlock = document.getElementById('codeBlock').textContent;
+        navigator.clipboard.writeText(codeBlock).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    });
+
+</script>
+
+</body>
+</html>
