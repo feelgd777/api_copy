@@ -1,4 +1,4 @@
-# Holiday API Code Examples
+# HolidayList Request Code Examples
 
 This guide provides code examples in multiple programming languages to interact with the **Holidays**, **Countries**, and **Languages** endpoints using the **Holiday API**. These examples demonstrate how to fetch data from each endpoint using mandatory and optional parameters.
 
