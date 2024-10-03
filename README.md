@@ -35,9 +35,9 @@ url = "https://back.holidaylist.io/v1/languages"
 params = {"key": "YOUR_API_KEY"}
 response = requests.get(url, params=params)
 print(response.json())
-
+```
 ## 2. JavaScript (Node.js)
-
+```javascript
 const axios = require('axios');
 
 // For Holidays
@@ -58,9 +58,9 @@ axios.get('https://back.holidaylist.io/v1/countries', {
 axios.get('https://back.holidaylist.io/v1/languages', {
     params: { key: 'YOUR_API_KEY' }
 }).then(res => console.log(res.data));
-
+```
 ## 3. Go (Golang)
-
+```Go
 package main
 
 import (
@@ -90,9 +90,9 @@ func main() {
     languagesURL := "https://back.holidaylist.io/v1/languages?key=YOUR_API_KEY"
     fetch(languagesURL)
 }
-
+```
 ## 4. PHP
-
+```php
 <?php
 // For Holidays
 $holidays_url = "https://back.holidaylist.io/v1/holidays?key=YOUR_API_KEY&country=US&year=2023";
@@ -109,9 +109,9 @@ $languages_url = "https://back.holidaylist.io/v1/languages?key=YOUR_API_KEY";
 $languages_response = file_get_contents($languages_url);
 echo $languages_response;
 ?>
-
+```
 ## 5. Ruby
-
+```ruby
 require 'net/http'
 require 'json'
 
@@ -121,7 +121,20 @@ def fetch(url)
   response = Net::HTTP.get(uri)
   puts JSON.pretty_generate(JSON.parse(response))
 end
+```
+## 6. Curl
+```curl
+# For Holidays
+curl -G -d country="US" -d year="2024" -d key="YOUR_API_KEY" https://back.holidaylist.io/api/v1/holidays
 
+# For Countries
+curl -X GET https://back.holidaylist.io/api/v1/countries?key=YOUR-API-KEY
+
+# For Languages
+curl -X GET https://back.holidaylist.io/api/v1/languages?key=YOUR-API-KEY
+```
+## 7. URL
+```url
 # For Holidays
 holidays_url = "https://back.holidaylist.io/v1/holidays?key=YOUR_API_KEY&country=US&year=2023"
 fetch(holidays_url)
@@ -133,3 +146,4 @@ fetch(countries_url)
 # For Languages
 languages_url = "https://back.holidaylist.io/v1/languages?key=YOUR_API_KEY"
 fetch(languages_url)
+```

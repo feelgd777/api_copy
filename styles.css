@@ -17,6 +17,9 @@
             color: #0f50d2;
         }
 
+        h3 {color: gray;
+        }
+
         .container {
             display: flex;
             max-width: 1200px;
