@@ -1,0 +1,124 @@
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #9cbadac1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #0f50d2;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .left-section, .right-section {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .right-section {
+            border-left: 2px solid #ddd;
+        }
+
+        .dropdown-container {
+            margin-bottom: 20px;
+        }
+
+        label, select {
+            font-size: 1.1rem;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .required, .optional {
+            background-color: #e9f5fc;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .response-section {
+            margin-top: 20px;
+        }
+
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .collapsible {
+            background-color: #e9f5fc;
+            cursor: pointer;
+            padding: 8px;
+            width: 70%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #ccc;
+        }
+
+        .collapsible::after {
+            content: '+';
+            float: right;
+            color: #0f50d2;
+            font-weight: bold;
+        }
+
+        .active::after {
+            content: '-';
+            color: #0f50d2;
+            font-weight: bold;
+        }
+
+        .collapsible-content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: white;
+        }
+        .copy-btn {
+            position: relative;        
+            background-color: #e2e5ec;
+            color: rgb(11, 9, 9);
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border-radius: 5px;
+        }
+
+        .copy-btn:hover {
+                background-color: #c0cee7;
+        }
