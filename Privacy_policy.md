@@ -61,5 +61,5 @@ We reserve the right to modify this Privacy Policy at any time. Any updates or c
 If you have any questions about this Privacy Policy or how we handle your personal information, please contact us at:  
 **Email**: support@holidaylist.com
 
-**Effective Date**: [Insert Date]
+**Effective Date**: 10/27/2024
 
