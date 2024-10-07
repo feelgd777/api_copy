@@ -74,5 +74,5 @@ We reserve the right to modify these Terms at any time. Updates will be posted o
 
 For any inquiries regarding these Terms, please contact us at support@holidaylist.com.
 
-**Effective Date**: [Insert Date]
+**Effective Date**: 10/07/2024
 
